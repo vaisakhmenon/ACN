@@ -1,0 +1,737 @@
+exam@debian:~$ mkdir sales
+exam@debian:~$ cd sales
+exam@debian:~/sales$ mkdir location1
+exam@debian:~/sales$ mkdir location2
+exam@debian:~/sales$ mkdir location3
+exam@debian:~/sales$ cd location1
+exam@debian:~/sales/location1$ cat > sales1.txt
+123
+exam@debian:~/sales/location1$ cat sales1.txt
+123
+exam@debian:~/sales/location1$ cat > sales2.txt
+456
+exam@debian:~/sales/location1$ cat > sales3.txt
+789
+exam@debian:~/sales/location1$ cat sales3.txt
+789
+exam@debian:~/sales/location1$ cd..
+bash: cd..: command not found
+exam@debian:~/sales/location1$ cd ..
+exam@debian:~/sales$ cd location2
+exam@debian:~/sales/location2$ cat > pur1.txt
+101112
+exam@debian:~/sales/location2$ cat > pur2.txt
+131415
+exam@debian:~/sales/location2$ cd ..
+exam@debian:~/sales$ cd location3
+exam@debian:~/sales/location3$ cat > stock1.txt
+161718
+exam@debian:~/sales/location3$ cat stock1.txt
+161718
+exam@debian:~/sales/location3$ cat > stock2.txt
+192021
+exam@debian:~/sales/location3$ cat stock2.txt
+192021
+exam@debian:~/sales/location3$ cd ..
+exam@debian:~/sales$ cd location2
+exam@debian:~/sales/location2$ cat pur1.txt pur2.txt >> pur3.txt
+exam@debian:~/sales/location2$ cat pur3.txt
+101112
+131415
+exam@debian:~/sales/location2$ cp pur3.txt ~/sales/location3/stock3.txt
+exam@debian:~/sales/location2$ cd ..
+exam@debian:~/sales$ cd location3
+exam@debian:~/sales/location3$ cat stock3.txt
+101112
+131415
+exam@debian:~/sales/location3$ chmod g-rwx stock3.txt
+exam@debian:~/sales/location3$ head -10 stock1.txt
+161718
+exam@debian:~/sales/location3$ cd ..
+exam@debian:~/sales$ ls
+location1  location2  location3
+exam@debian:~/sales$ ls -l
+total 12
+drwxr-xr-x 2 exam exam 4096 Oct  8 14:23 location1
+drwxr-xr-x 2 exam exam 4096 Oct  8 14:26 location2
+drwxr-xr-x 2 exam exam 4096 Oct  8 14:29 location3
+exam@debian:~/sales$ ls -al
+total 20
+drwxr-xr-x  5 exam exam 4096 Oct  8 14:21 .
+drwxr-xr-x 19 exam exam 4096 Oct  8 14:21 ..
+drwxr-xr-x  2 exam exam 4096 Oct  8 14:23 location1
+drwxr-xr-x  2 exam exam 4096 Oct  8 14:26 location2
+drwxr-xr-x  2 exam exam 4096 Oct  8 14:29 location3
+exam@debian:~/sales$ cd ..
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+volume.sh: line 1: syntax error near unexpected token `"enter the 4 integer values"'
+volume.sh: line 1: `echo ("enter the 4 integer values")'
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+5
+3
+4
+2
+volume.sh: line 6: syntax error near unexpected token `"Menu"'
+volume.sh: line 6: `echo ("Menu")'
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+2
+3
+4
+5
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 14: syntax error near unexpected token ``v1= $(expr $d*$a*$a*$a)`'
+volume.sh: line 14: `    echo `v1= $(expr $d*$a*$a*$a)`;;'
+exam@debian:~$ emacs volume.sh
+^[[A^Cexam@debian:~$ emacs volume.sh
+^[[A^Cexam@debian:~$ bash volume.sh
+enter the 4 integer values
+2
+3
+4
+5
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 14: syntax error near unexpected token ``v1= $(expr d*$a*$a*$a)`'
+volume.sh: line 14: `    echo `v1= $(expr d*$a*$a*$a)`;;'
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+2
+3
+4
+5
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 14: syntax error near unexpected token ``v1 = $(expr d*$a*$a*$a)`'
+volume.sh: line 14: `    echo `v1 = $(expr d*$a*$a*$a)`;;'
+exam@debian:~$ emacs volume.sh
+^[[A^Cexam@debian:~$ bash volume.sh
+enter the 4 integer values
+2
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 14: syntax error near unexpected token ``v1=$(expr d*$a*$a*$a)`'
+volume.sh: line 14: `    echo `v1=$(expr d*$a*$a*$a)`;;'
+exam@debian:~$ emacs volume.sh
+^Cexam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 17: syntax error near unexpected token ``v3= $(expr $e*$c*$c*$h)`'
+volume.sh: line 17: `    echo `v3= $(expr $e*$c*$c*$h)`;;'
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 15: syntax error near unexpected token `)'
+volume.sh: line 15: `    2) echo `v2= $(expr$b*$b*$b)`;;'
+exam@debian:~$ emacs volume.sh
+^[[Aexam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 16: syntax error near unexpected token `)'
+volume.sh: line 16: `    2) echo `v2= $(expr$b*$b*$b)`;;'
+exam@debian:~$ emacs volume.sh
+^Cexam@debian:~$ ls -l
+total 56
+drwxr-xr-x 2 exam exam 4096 Oct  4 09:18  Desktop
+drwxr-xr-x 2 exam exam 4096 Oct  4 09:18  Documents
+drwxr-xr-x 2 exam exam 4096 Sep  3 07:35  Downloads
+drwxr-xr-x 2 exam exam 4096 Sep  2 17:04  Music
+drwxr-xr-x 2 exam exam 4096 Sep  2 17:04  Pictures
+drwxr-xr-x 2 exam exam 4096 Sep  3 07:32  Public
+drwxr-xr-x 2 exam exam 4096 Sep  2 17:05  public_html
+drwxr-xr-x 5 exam exam 4096 Oct  8 14:21  sales
+drwxr-xr-x 2 exam exam 4096 Sep  2 17:04  Templates
+drwxr-xr-x 2 exam exam 4096 Oct  8 14:35 'vaisakh acn lab exam'
+drwxr-xr-x 2 exam exam 4096 Sep  2 17:04  Videos
+-rw-r--r-- 1 exam exam  455 Oct  8 15:09 '#volume.sh#'
+-rw-r--r-- 1 exam exam  424 Oct  8 15:04  volume.sh
+-rw-r--r-- 1 exam exam  389 Oct  8 15:01  volume.sh~
+exam@debian:~$ cd sales
+exam@debian:~/sales$ cd location3
+exam@debian:~/sales/location3$ ls -l
+total 12
+-rw-r--r-- 1 exam exam  7 Oct  8 14:25 stock1.txt
+-rw-r--r-- 1 exam exam  7 Oct  8 14:25 stock2.txt
+-rw----r-- 1 exam exam 14 Oct  8 14:29 stock3.txt
+exam@debian:~/sales/location3$ chmod a- wrt stock3.txt
+chmod: cannot access 'wrt': No such file or directory
+exam@debian:~/sales/location3$ cd ..
+exam@debian:~/sales$ cd ..
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 15: unexpected EOF while looking for matching ``'
+volume.sh: line 19: syntax error: unexpected end of file
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: d: command not found
+
+volume.sh: line 14: f: command not found
+
+volume.sh: line 15: Desktop: command not found
+volume.sh: line 15: v: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: d: command not found
+
+volume.sh: line 14: f: command not found
+
+volume.sh: line 15: Desktop: command not found
+volume.sh: line 15: v: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: Desktop: command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: Desktop: command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =1: command not found
+
+volume.sh: line 14: =3: command not found
+
+volume.sh: line 15: Desktop: command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: Desktop: command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: command substitution: line 14: syntax error near unexpected token `4'
+volume.sh: command substitution: line 14: ` expr (4 / 3))'
+
+volume.sh: command substitution: line 15: syntax error near unexpected token `22'
+volume.sh: command substitution: line 15: ` expr (22 / 7))'
+
+volume.sh: line 15: Desktop: command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: *: command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: *: command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: /bin: Is a directory
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: Desktop/: Is a directory
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: /bin: Is a directory
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: *: command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: * : command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+1
+2
+3
+4
+Menu
+1-> volume of sphere
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+volume.sh: line 13: =: command not found
+
+volume.sh: line 14: =: command not found
+
+volume.sh: line 15: *: command not found
+volume.sh: line 15: =: command not found
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ cd sales
+exam@debian:~/sales$ cd location
+bash: cd: location: No such file or directory
+exam@debian:~/sales$ cd location3
+exam@debian:~/sales/location3$ chmod g+rwx stock3.txt
+exam@debian:~/sales/location3$ ls -l
+total 12
+-rw-r--r-- 1 exam exam  7 Oct  8 14:25 stock1.txt
+-rw-r--r-- 1 exam exam  7 Oct  8 14:25 stock2.txt
+-rw-rwxr-- 1 exam exam 14 Oct  8 14:29 stock3.txt
+exam@debian:~/sales/location3$ cat < stock1.txt
+161718
+exam@debian:~/sales/location3$ cat > stock1.txt
+dgfhg
+sdgsdg
+gsgdfsg
+gsdgsdg
+gdsgsdg
+gsdgsdgsd
+sdgsdgsdg
+sdgsdgsdg
+dsgsdgdsg
+sdgsdggsdg
+sgdgsdg
+sdgsdgsd
+sdgsdg
+sdgdsgsdgs
+gsdsdg
+exam@debian:~/sales/location3$ head -10 stock1.txt
+dgfhg
+sdgsdg
+gsgdfsg
+gsdgsdg
+gdsgsdg
+gsdgsdgsd
+sdgsdgsdg
+sdgsdgsdg
+dsgsdgdsg
+sdgsdggsdg
+exam@debian:~/sales/location3$ cd ..
+exam@debian:~/sales$ cd ..
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+
+expr: syntax error: missing argument after ‘*’
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cube
+3-> volume of cylinder
+enter choice
+1
+enter value of a
+2
+8
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of sphere
+3-> volume of cylinder
+enter choice
+2
+enter the value of b and d
+2
+3
+cylinder volume is 
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of sphere
+3-> volume of cylinder
+enter choice
+2
+enter the value of b and d
+2
+3
+
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of sphere
+3-> volume of cylinder
+enter choice
+2
+enter the value of b and d
+2
+3
+36
+exam@debian:~$ emacs volume.sh
+
+exam@debian:~$ 
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cylinder
+3-> volume of sphere
+enter choice
+2
+enter the value of b and d
+4
+3
+144
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cylinder
+3-> volume of sphere
+enter choice
+3
+enter the value of a
+5
+375
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cylinder
+3-> volume of sphere
+enter choice
+1
+enter value of a
+2
+8
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cylinder
+3-> volume of sphere
+enter choice
+2
+enter the value of b and d
+4
+3
+144
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cylinder
+3-> volume of sphere
+enter choice
+3
+enter the value of a
+5
+375
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cylinder
+3-> volume of sphere
+enter choice
+2
+enter the value of b and d
+4
+3
+144
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cylinder
+3-> volume of sphere
+enter choice
+3       
+enter the value of a
+5
+375
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ bash volume.sh
+enter the 4 integer values
+Menu
+1-> volume of cube
+2-> volume of cylinder
+3-> volume of sphere
+enter choice
+2
+enter the value of b and d
+4
+3
+144
+exam@debian:~$ emacs volume.sh
+exam@debian:~$ 
+
